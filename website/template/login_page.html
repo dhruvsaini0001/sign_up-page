@@ -1,0 +1,72 @@
+
+<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: goldenrod;
+            }
+            button{
+                background-color: goldenrod;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+                color: goldenrod;
+            }
+            form{
+                border: 3px solid goldenrod;
+            }
+            input[type=email],input[type=password]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid goldenrod;
+                box-sizing: border-box;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: rgb(14, 12, 12);
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 20%;
+                border-radius: 50%;
+            }  
+        </style>
+    </head>
+    <body>
+        <center><h1>Login Form</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center><div class="container">
+                <div class="imgcontainer">
+                    <img src="data:image/jpeg;base64,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" alt="Avatar" class="avatar">
+                </div>
+                <label for ='email'><b>UserEmail :  </b></label>
+                <input type="email" placeholder="Enter email" name="email" float="right"  required><br>  
+                <label for='password'><b>Password : </b></label>
+                <input type="password" placeholder="Enter Password" name="password" required><br>  
+                <button type="submit"><b>Login</b></button><br>     
+                Don't have accounct <a href="http://localhost:8000/signup/"> register </a>
+            </div></center>
+        </form>
+    </body>
+</html>
