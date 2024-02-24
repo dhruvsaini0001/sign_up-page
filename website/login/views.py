@@ -20,8 +20,8 @@ def loginaction(request):
         cursor.execute(c)
         t=tuple(cursor.fetchall())
         if t==():
-            return render(request,'calculator.html')
+            return render(request,'error.html')
         else:
-            return render(request,"calculator.html")
+            return render(request,"welcome.html")
 
     return render(request,'login_page.html')
