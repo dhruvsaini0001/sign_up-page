@@ -16,7 +16,7 @@ def loginaction(request):
             if key=="password":
                 pwd=value
         
-        c="select * from users where email='{}' and password='{}'".format(em,pwd)
+        c="select * from data where email='{}' and password='{}'".format(em,pwd)
         cursor.execute(c)
         t=tuple(cursor.fetchall())
         if t==():

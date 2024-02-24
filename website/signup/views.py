@@ -3,12 +3,11 @@ from django.shortcuts import render
 import mysql.connector as sql
 fn=''
 ln=''
-s=''
 em=''
 pwd=''
 # Create your views here.
 def signaction(request):
-    global fn,ln,s,em,pwd
+    global fn,ln,em,pwd
     if request.method=="POST":
         m=sql.connect(host="localhost",user="root",passwd="dhruv",database='website')
         cursor=m.cursor()
@@ -18,14 +17,12 @@ def signaction(request):
                 fn=value
             if key=="last_name":
                 ln=value
-            if key=="sex":
-                s=value
             if key=="email":
                 em=value
             if key=="password":
                 pwd=value
         
-        c="insert into users Values('{}','{}','{}','{}','{}')".format(fn,ln,s,em,pwd)
+        c="insert into data Values('{}','{}','{}','{}')".format(fn,ln,em,pwd)
         cursor.execute(c)
         m.commit()
 
